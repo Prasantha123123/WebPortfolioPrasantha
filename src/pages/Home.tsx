@@ -91,7 +91,7 @@ const Home = () => {
                 </div>
                 <div className="flex items-center justify-center lg:justify-start space-x-2">
                   <Mail className="w-5 h-5 text-light-accent dark:text-dark-accent" />
-                  <span>prasantha20011216.com</span>
+                  <span>prasantha20011216@gmail.com</span>
                 </div>
               </div>
             </motion.div>
