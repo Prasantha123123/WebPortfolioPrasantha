@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, Download, Github, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import profileImg from '../assets/profile.jpg';
+import profileImg from '/assets/profile.jpg';
 
 const Home = () => {
   const [currentSkill, setCurrentSkill] = useState(0);
-  const skills = ['laravel','React','Java', 'PHP', 'SQL', 'HTML', 'CSS', 'JavaScript', 'MySQL'];
+  const skills = ['React', 'Laravel', 'Java', 'PHP', 'MySQL', 'JavaScript', 'HTML', 'CSS', 'SQL'];
+
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -173,7 +174,7 @@ const Home = () => {
                 <div className="w-full h-full rounded-full bg-light-bg-secondary dark:bg-dark-bg-secondary flex items-center justify-center text-6xl font-bold text-light-secondary dark:text-dark-secondary">
                  <img
                     src="/profile.jpg"
-                    alt="Profile"
+                    alt="Raman Prasantha's profile photo"
                     className="w-full h-full object-cover rounded-full"
                   />
                 </div>
