@@ -9,8 +9,8 @@ const Projects = () => {
       title: "AI-Powered Resume Analyzer",
       description: "A smart resume analyzer that evaluates resumes based on keyword matching, relevance scoring, and formatting checks. Built using custom logic without external AI APIs.",
       image: "https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["React", "Node.js", "MongoDB", "Custom Logic"],
-      liveUrl: "https://fascinating-tanuki-518103.netlify.app/",
+      technologies: ["React", "Node.js", "Custom Logic"],
+      liveUrl: "https://aipoweredresumeanalyzer.netlify.app/",
       githubUrl: "https://github.com/Prasantha123123/AiPoweredResumeAnalyzer",
       date: "2025",
       category: "Resume Tool"
