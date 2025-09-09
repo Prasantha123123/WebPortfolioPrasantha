@@ -1,8 +1,4 @@
 User-agent: *
 Allow: /
 
-# Block private areas (if they exist)
-Disallow: /admin/
-Disallow: /private/
-
 Sitemap: https://prasantha.netlify.app/sitemap.xml
