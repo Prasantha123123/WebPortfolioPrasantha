@@ -2,3 +2,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://prasantha.netlify.app/sitemap.xml
+
+curl -I https://prasantha.netlify.app/
+curl -I https://prasantha.netlify.app/prasantha
