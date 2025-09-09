@@ -11,31 +11,21 @@ import Contact from './pages/Contact';
 import Footer from './components/Footer';
 import ThemeProvider from './context/ThemeContext';
 
+import PrasanthaPage from './pages/PrasanthaPage'; // ← add this
+
 function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-
+    const timer = setTimeout(() => setLoading(false), 2000);
     return () => clearTimeout(timer);
   }, []);
 
   if (loading) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-purple-50 to-teal-100 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-          className="text-center"
-        >
-          <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-            className="w-16 h-16 border-4 border-purple-500 border-t-transparent rounded-full mx-auto mb-4"
-          />
+        <motion.div initial={{ opacity: 0, scale: 0.5 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5 }} className="text-center">
+          <motion.div animate={{ rotate: 360 }} transition={{ duration: 2, repeat: Infinity, ease: 'linear' }} className="w-16 h-16 border-4 border-purple-500 border-t-transparent rounded-full mx-auto mb-4" />
           <h2 className="text-2xl font-bold text-gray-800 dark:text-white">Loading...</h2>
         </motion.div>
       </div>
@@ -55,6 +45,7 @@ function App() {
               <Route path="/projects" element={<Projects />} />
               <Route path="/skills" element={<Skills />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/prasantha" element={<PrasanthaPage />} /> {/* ← add this */}
             </Routes>
           </AnimatePresence>
           <Footer />

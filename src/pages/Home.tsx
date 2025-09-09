@@ -20,10 +20,7 @@ const Home = () => {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-        delayChildren: 0.2,
-      },
+      transition: { staggerChildren: 0.3, delayChildren: 0.2 },
     },
   };
 
@@ -32,34 +29,52 @@ const Home = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-      },
+      transition: { duration: 0.8, ease: 'easeOut' },
     },
   };
 
-  const canonical =
-    typeof window !== 'undefined' ? window.location.href : 'https://prasantha.netlify.app/';
+  // Fixed canonical prevents querystring duplicates
+  const canonical = 'https://prasantha.netlify.app/';
 
   return (
     <>
       {/* SEO only; UI/logic unchanged */}
       <Helmet>
-        <title>Raman Prasantha — Full Stack Developer (React, Laravel, PHP)</title>
+        <title>Prasantha (Raman) — Full Stack Developer (React, Laravel, PHP)</title>
         <meta
           name="description"
           content="Software Engineering student & developer from Sri Lanka. React, Laravel, PHP, MySQL. Explore projects, services, and contact."
         />
         <link rel="canonical" href={canonical} />
+
         <meta property="og:title" content="Raman Prasantha — Full Stack Developer" />
-        <meta
-          property="og:description"
-          content="React, Laravel, PHP, MySQL. Portfolio, projects, and services."
-        />
+        <meta property="og:description" content="React, Laravel, PHP, MySQL. Portfolio, projects, and services." />
         <meta property="og:url" content={canonical} />
         <meta property="og:image" content="https://prasantha.netlify.app/og-image.jpg" />
         <meta name="twitter:image" content="https://prasantha.netlify.app/og-image.jpg" />
+
+        {/* Optional: add your actual token once you create the property in Google Search Console */}
+        {/* <meta name="google-site-verification" content="PASTE_TOKEN_HERE" /> */}
+
+        {/* Person JSON-LD with alternateName so Google connects the single-word query "Prasantha" to you */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Person',
+            name: 'Raman Prasantha',
+            alternateName: ['Prasantha', 'Prasantha Raman', 'Raman P.'],
+            jobTitle: 'Full Stack Developer',
+            url: 'https://prasantha.netlify.app',
+            sameAs: [
+              'https://github.com/Prasantha123123',
+              'https://www.linkedin.com/in/prasantha-raman-8788aa262',
+            ],
+            address: { '@type': 'PostalAddress', addressLocality: 'Wattala', addressCountry: 'Sri Lanka' },
+            email: 'mailto:prasantha20011216@gmail.com',
+            telephone: '+94-713881357',
+            knowsAbout: ['React', 'Laravel', 'PHP', 'MySQL', 'JavaScript', 'HTML5', 'CSS3'],
+          })}
+        </script>
       </Helmet>
 
       <motion.div
@@ -183,14 +198,8 @@ const Home = () => {
             </motion.div>
 
             {/* Right Content - Profile Image */}
-            <motion.div
-              variants={itemVariants}
-              className="flex justify-center lg:justify-end"
-            >
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                className="relative"
-              >
+            <motion.div variants={itemVariants} className="flex justify-center lg:justify-end">
+              <motion.div whileHover={{ scale: 1.05 }} className="relative">
                 <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full bg-gradient-to-br from-light-accent to-light-accent-secondary dark:from-dark-accent dark:to-dark-accent-secondary p-1">
                   <div className="w-full h-full rounded-full bg-light-bg-secondary dark:bg-dark-bg-secondary flex items-center justify-center text-6xl font-bold text-light-secondary dark:text-dark-secondary">
                     <img
@@ -200,7 +209,7 @@ const Home = () => {
                     />
                   </div>
                 </div>
-                
+
                 {/* Floating Elements */}
                 <motion.div
                   animate={{ y: [-10, 10, -10] }}
