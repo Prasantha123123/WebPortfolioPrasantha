@@ -1,32 +1,8 @@
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://prasantha.netlify.app/sitemap.xml
-
-# Crawl-delay
-Crawl-delay: 1
-
-# Specific rules for search engines
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-# Block access to admin or private areas (if any)
+# Block private areas (if they exist)
 Disallow: /admin/
 Disallow: /private/
-Disallow: /*.json$
-Disallow: /api/
 
-# Allow access to CSS and JS files
-Allow: /assets/
-Allow: /*.css$
-Allow: /*.js$
-Allow: /*.png$
-Allow: /*.jpg$
-Allow: /*.jpeg$
-Allow: /*.gif$
-Allow: /*.svg$
-Allow: /*.webp$
+Sitemap: https://prasantha.netlify.app/sitemap.xml
